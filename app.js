@@ -113,10 +113,10 @@ function nsc(){
 }
 
 function ri(s){
-if(s>=70)return{lbl:'Excellent',cls:'be',bar:'linear-gradient(90deg,#1D7A4B,#34D399)'};
-if(s>=50)return{lbl:'Good',cls:'bg',bar:'linear-gradient(90deg,#2563AB,#60A5FA)'};
-if(s>=30)return{lbl:'Moderate',cls:'bm',bar:'linear-gradient(90deg,#C2622D,#FB923C)'};
-return{lbl:'Low',cls:'bl',bar:'#D1D5DB'};
+  if(s>=80)return{lbl:'Strong Fit',cls:'be',bar:'linear-gradient(90deg,#1D7A4B,#34D399)'};
+  if(s>=55)return{lbl:'Good Fit',cls:'bg',bar:'linear-gradient(90deg,#2563AB,#60A5FA)'};
+  if(s>=30)return{lbl:'Partial Fit',cls:'bm',bar:'linear-gradient(90deg,#C2622D,#FB923C)'};
+  return{lbl:'Low Fit',cls:'bl',bar:'#D1D5DB'};
 }
 
 function accCls(a){return a==='Accessible'?'acc-access':a==='Moderate'?'acc-moderate':a==='Competitive'?'acc-competitive':'acc-highly';}
