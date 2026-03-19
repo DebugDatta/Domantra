@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Path Discovery - Find Your Domain</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="welcome" class="scr">
+<div class="w-orbs"><div class="w-orb"></div><div class="w-orb"></div><div class="w-orb"></div></div>
+<div class="w-inner">
+<div class="w-chip">Career Discovery Framework</div>
+<h1 class="w-h1">Find your <em>ideal</em><br>career domain</h1>
+<p class="w-sub">20 targeted questions. Science-backed scoring. Discover which of 10 career domains match how you actually think, work, and thrive - then explore every role in depth.</p>
+<button class="btn-begin" onclick="startQuiz()">Begin Assessment<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<p class="w-note">Your progress is saved - refresh anytime and pick up where you left off.</p>
+</div>
+</section>
+<section id="quiz" class="scr">
+<div class="q-wrap">
+<div class="q-topbar">
+<button class="btn-ghost" onclick="goHome()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M10 6.5H3M3 6.5L6 3.5M3 6.5L6 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</button>
+<span class="q-ctr">Question <b id="qIdx">1</b> of 20</span>
+</div>
+<div class="prog-area">
+<div class="prog-rail"><div class="prog-bar" id="progBar"></div></div>
+<div class="prog-foot"><span id="progPct">0% complete</span><span id="progAns">0 / 20 answered</span></div>
+</div>
+<div class="part-flag" id="partFlag"></div>
+<div class="q-card" id="qCard">
+<div class="q-label" id="qLabel">QUESTION 1</div>
+<div class="q-text" id="qText"></div>
+<div class="opts" id="optsEl"></div>
+</div>
+<div class="q-nav">
+<button class="btn-prev" id="btnPrev" onclick="qNav(-1)" disabled><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 6.5H4M4 6.5L7 3.5M4 6.5L7 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Previous</button>
+<button class="btn-next" id="btnNext" disabled>Next<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M4 6.5H9M9 6.5L6 3.5M9 6.5L6 9.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+<p class="q-hint" id="qHint">Select an answer to continue</p>
+</div>
+</section>
+<section id="results" class="scr">
+<div class="r-wrap">
+<div class="r-head fade">
+<div class="r-head-icon">🎯</div>
+<h1 class="r-title">Your Career Profile</h1>
+<p class="r-sub">Based on your answers. Click any domain card to explore all roles in full detail.</p>
+<div class="r-actions">
+<button class="btn-sm" onclick="goHome()">← Home</button>
+<button class="btn-sm" onclick="retake()">↺ Retake Quiz</button>
+</div>
+</div>
+<div class="score-key fade">
+<span class="sk-item sk-exc">70-100 Excellent</span>
+<span class="sk-item sk-good">50-69 Good</span>
+<span class="sk-item sk-mod">30-49 Moderate</span>
+<span class="sk-item sk-low">0-29 Low</span>
+</div>
+<div class="podium fade" id="podium"></div>
+<div class="sec-label fade">All Domain Scores</div>
+<p class="sec-note fade">Click any card to explore roles, day-to-day realities, skills required, and honest fit indicators.</p>
+<div class="dom-grid" id="domGrid"></div>
+<div class="sec-label fade">What to Do Next</div>
+<div class="next-wrap fade">
+<div class="next-row"><div class="next-n">1</div><div class="next-t"><strong>Focus on your top 2-3 domains</strong> - don't spread yourself thin across everything. Click your best-fit card above to go deep.</div></div>
+<div class="next-row"><div class="next-n">2</div><div class="next-t"><strong>Read the Role Sheets.</strong> Each domain has 2-4 specific roles with real day-to-day breakdowns. Explore all of them before deciding.</div></div>
+<div class="next-row"><div class="next-n">3</div><div class="next-t"><strong>Build Priority 1-2 skills</strong> listed in your top role. Depth beats breadth early on - become dangerous at one thing first.</div></div>
+<div class="next-row"><div class="next-n">4</div><div class="next-t"><strong>Target 20-30 companies</strong> in your top domains and build a list. Specificity beats spray-and-pray.</div></div>
+<div class="next-row"><div class="next-n">5</div><div class="next-t"><strong>Start cold outreach now.</strong> Aim for 50+ personalised messages per week. Volume with quality is the only shortcut.</div></div>
+<div class="next-row"><div class="next-n">6</div><div class="next-t"><strong>This shows natural fit, not your ceiling.</strong> You can succeed anywhere with effort - but you'll compound faster where you have innate advantages.</div></div>
+</div>
+</div>
+</section>
+<section id="detail" class="scr">
+<div class="dt-wrap">
+<div class="dt-nav">
+<button class="btn-ghost" onclick="goResults()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M10 6.5H3M3 6.5L6 3.5M3 6.5L6 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Dashboard</button>
+<div class="bc">Results <span id="bcDomain">Domain</span></div>
+</div>
+<div class="dt-hero" id="dtHero"></div>
+<div class="qref-title">All Roles at a Glance</div>
+<table class="qref-table" id="qrefTable"><thead><tr><th>Role</th><th>Stipend</th><th>Hours/Week</th><th>Accessibility</th></tr></thead><tbody id="qrefBody"></tbody></table>
+<div class="roles-title">Role Deep-Dives</div>
+<div class="role-acc" id="roleAcc"></div>
+</div>
+</section>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
