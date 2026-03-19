@@ -107,7 +107,10 @@ save();
 if(qi<19)setTimeout(()=>qNav(1),300);
 }
 
-function nsc(){return sc.map(s=>Math.min(100,Math.round(s/2)));}
+function nsc(){
+  const max=Math.max(...sc);
+  return sc.map(s=>max===0?0:Math.round((s/max)*100));
+}
 
 function ri(s){
 if(s>=70)return{lbl:'Excellent',cls:'be',bar:'linear-gradient(90deg,#1D7A4B,#34D399)'};
