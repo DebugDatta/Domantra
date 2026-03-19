@@ -108,8 +108,8 @@ if(qi<19)setTimeout(()=>qNav(1),300);
 }
 
 function nsc(){
-  const max=Math.max(...sc);
-  return sc.map(s=>max===0?0:Math.round((s/max)*100));
+  const maxPossible=200;
+  return sc.map(s=>Math.round((s/maxPossible)*100));
 }
 
 function ri(s){
